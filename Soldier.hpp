@@ -21,13 +21,14 @@ class Board;
 
 
     public:
-        Position location;
+        //Position location;
         unsigned int playerNumber; // Who own me?
         enum class Type {
             FootSolider, FootSoliderCommander, Sniper, SniperCommander, Paramedic, ParamedicCommander
         };
         Type type;
         //initial health points
+        static const int Damage;
         static const int InitialHealthPoints;
         int HP;
 
@@ -37,7 +38,8 @@ class Board;
         protected:
         Soldier(int player);
         Soldier(int player, Type type, int HP);
-        virtual void attack(std::vector<std::vector<Soldier*>> matrix);// Uses special ability of the solider
+        virtual void attack(std::vector<std::vector<Soldier*>> matrix) = 0;
+        virtual void Heal(int health) = 0;// Uses special ability of the solider
     };
 }
 #endif //WATGAME_SOLDIER_HPP

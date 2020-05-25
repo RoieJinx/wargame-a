@@ -18,7 +18,7 @@ using namespace std;
 namespace WarGame{
 class FootSoldier : public Soldier
 {
-
+    static const int Damage = 10;
     static const int MAX_HP = 50;
 
    /**

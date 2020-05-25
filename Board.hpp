@@ -16,7 +16,7 @@
 
 
 namespace WarGame {
-    class Soldier;// Forward decleration
+    //class Soldier;// Forward decleration
 
     class Board {
   private:
@@ -24,7 +24,7 @@ namespace WarGame {
     std::vector<Soldier*> p1_soldiers; // Vector of Player 1 solders, for easy access to solider data
     std::vector<Soldier*> p2_soldiers; // Vector of Player 2 solders, for easy access to solider data
   public:
-    enum class MoveDIR { Up = 0, Down, Right, Left, direction
+    enum class MoveDIR { Up = 0, Down, Right, Left
     };
 
     Position dirs[4] =
@@ -60,7 +60,8 @@ namespace WarGame {
     void move(unsigned int player_number, std::pair<int,int> source, MoveDIR direction);
 
     // returns true iff the board contains one or more soldiers of the given player.
-    bool has_soldiers(unsigned int player_number) const;
+    bool has_soldiers(unsigned int player_number) const
+    {return true;}
 };
 
 }

@@ -21,8 +21,7 @@ void WarGame::Board::move(unsigned int player_number, std::pair<int,int> source,
     if((*(this))[source] == nullptr || (*(this))[source]->playerNumber != player_number )
         throw  std::invalid_argument("Invalid Argument!");
 
-
-    //Position after_move = (source + dirs[static_cast<int>(MoveDIR::direction)]);
+    Position after_move = (source + dirs[static_cast<int>(direction)]);
 
     // 2. Check if destination location is valid.
         //
