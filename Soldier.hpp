@@ -35,11 +35,13 @@ class Board;
         //damage per activity
 
         ///// Methods /////
-        protected:
+    public:
         Soldier(int player);
         Soldier(int player, Type type, int HP);
         virtual void attack(std::vector<std::vector<Soldier*>> matrix) = 0;
         virtual void Heal(int health) = 0;// Uses special ability of the solider
+        virtual ~Soldier(){}
+
     };
 }
 #endif //WATGAME_SOLDIER_HPP

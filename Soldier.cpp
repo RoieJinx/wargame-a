@@ -35,3 +35,4 @@ Soldier::Soldier(int player, Type type, int HP) : playerNumber(player), type(typ
 {
     cout<< "Solider Built2" << endl;
 }
+

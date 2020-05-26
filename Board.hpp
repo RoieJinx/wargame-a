@@ -60,19 +60,40 @@ namespace WarGame {
     // returns true iff the board contains one or more soldiers of the given player.
     bool has_soldiers(unsigned int player_number) const
     {
-     /*   Soldier* currSoldier;
-        //bool foundSolider = false;
-        for( int row = 0 ; row < matrix.size() ; row++)
-        {
-            for( int column = 0 ; column < matrix[0].size() ; column++)
-            {
-                currSoldier = matrix[std::pair{row,column}];
-                if(currSoldier->playerNumber == player_number)
-                    return true;
 
+        int num_of_rows = matrix.size();
+        int num_of_collumns = matrix[0].size();
+
+        for( int r = 0 ; r < num_of_rows ; r++ )
+        {
+            for( int c = 0 ; c < num_of_collumns ; c++)
+            {
+                if(matrix[r][c] != nullptr) // If there is a Soldier on this  spot
+                {
+                   if(matrix[r][c]->playerNumber == player_number)
+                       return true;
+                }
             }
-        }*/
+        }
         return false;
+    }
+
+    ~Board()
+    {
+        int num_of_rows = matrix.size();
+        int num_of_collumns = matrix[0].size();
+
+        for( int r = 0 ; r < num_of_rows ; r++ )
+        {
+         for( int c = 0 ; c < num_of_collumns ; c++)
+         {
+             if(matrix[r][c] != nullptr) // If there is a Soldier on this  spot ,  delete it.
+             {
+                 delete matrix[r][c];
+             }
+         }
+        }
+
     }
 };
 

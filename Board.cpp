@@ -16,6 +16,9 @@
 //      must be handled by polymorphism.
 void WarGame::Board::move(unsigned int player_number, std::pair<int,int> source, MoveDIR direction)
 {
+
+    /*
+
     // 1. Check if there is a solider in the source location, and if the player own this solider
     //
     if((*(this))[source] == nullptr || (*(this))[source]->playerNumber != player_number )
@@ -29,7 +32,7 @@ void WarGame::Board::move(unsigned int player_number, std::pair<int,int> source,
 
 
     // 3. Move the solider & Activate speacial ability
-
+*/
 }
 // operator for putting soldiers on the game-board during initialization.
 //board[{0,1}] = new FootSoldier(1);

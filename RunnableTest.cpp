@@ -4,7 +4,7 @@
 #include "Soldier.hpp"
 #include "FootSoldier.hpp"
 
-using namespace WarGame;
+/*using namespace WarGame;
 int main()
 {
     cout << "Enter test" << endl;
@@ -14,7 +14,7 @@ int main()
     cout << "End Test" << endl;
     return 0;
 
-}
+}*/
 
 //
 
