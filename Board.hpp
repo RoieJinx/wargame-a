@@ -21,8 +21,7 @@ namespace WarGame {
     class Board {
   private:
     std::vector<std::vector<Soldier*>> matrix; // Vector matrix to find Locations in O(1)
-    std::vector<Soldier*> p1_soldiers; // Vector of Player 1 solders, for easy access to solider data
-    std::vector<Soldier*> p2_soldiers; // Vector of Player 2 solders, for easy access to solider data
+
   public:
     enum class MoveDIR { Up = 0, Down, Right, Left
     };
@@ -34,11 +33,10 @@ namespace WarGame {
             {0, 1},
             {0, -1},
     };
-    
+    Board() :matrix(8, std::vector<Soldier*>(8, nullptr)){}
     Board(uint numRows, uint numCols) :
-            matrix(numRows, std::vector<Soldier*>(numCols, nullptr)),
-            p1_soldiers(numCols * numRows , nullptr),
-            p2_soldiers(numCols * numRows , nullptr) {}
+            matrix(numRows, std::vector<Soldier*>(numCols, nullptr))
+            {}
 
     // operator for putting soldiers on the game-board during initialization.
     WarGame::Soldier*& operator[](std::pair<int,int> location);
@@ -61,7 +59,21 @@ namespace WarGame {
 
     // returns true iff the board contains one or more soldiers of the given player.
     bool has_soldiers(unsigned int player_number) const
-    {return true;}
+    {
+     /*   Soldier* currSoldier;
+        //bool foundSolider = false;
+        for( int row = 0 ; row < matrix.size() ; row++)
+        {
+            for( int column = 0 ; column < matrix[0].size() ; column++)
+            {
+                currSoldier = matrix[std::pair{row,column}];
+                if(currSoldier->playerNumber == player_number)
+                    return true;
+
+            }
+        }*/
+        return false;
+    }
 };
 
 }

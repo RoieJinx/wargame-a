@@ -24,7 +24,7 @@ class Board;
         //Position location;
         unsigned int playerNumber; // Who own me?
         enum class Type {
-            FootSolider, FootSoliderCommander, Sniper, SniperCommander, Paramedic, ParamedicCommander
+            FootSolider, FootCommander, Sniper, SniperCommander, Paramedic, ParamedicCommander
         };
         Type type;
         //initial health points
