@@ -87,7 +87,7 @@ namespace WarGame {
         {
          for( int c = 0 ; c < num_of_collumns ; c++)
          {
-             if(matrix[r][c] != nullptr) // If there is a Soldier on this  spot ,  delete it.
+             if(matrix[r][c]) // If there is a Soldier on this  spot ,  delete it.
              {
                  delete matrix[r][c];
              }
