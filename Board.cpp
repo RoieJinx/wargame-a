@@ -17,22 +17,29 @@
 void WarGame::Board::move(unsigned int player_number, std::pair<int,int> source, MoveDIR direction)
 {
 
-    /*
+
 
     // 1. Check if there is a solider in the source location, and if the player own this solider
     //
     if((*(this))[source] == nullptr || (*(this))[source]->playerNumber != player_number )
         throw  std::invalid_argument("Invalid Argument!");
-
     Position after_move = (source + dirs[static_cast<int>(direction)]);
 
+    /**
+     * Check out of boundd after move
+     * */
+
     // 2. Check if destination location is valid.
-        //
-
-
-
-    // 3. Move the solider & Activate speacial ability
-*/
+    if((*(this))[after_move] == nullptr)// If the pointer is free and do not contain a soldier.
+    {
+        // 3. Move the solider & Activate speacial ability
+        std::swap((*(this))[after_move],(*(this))[source]);
+        (*(this))[after_move]->attack(this,after_move); // Use attack
+    }
+    else
+        {
+        throw  std::invalid_argument("Invalid Argument!");
+    }
 }
 // operator for putting soldiers on the game-board during initialization.
 //board[{0,1}] = new FootSoldier(1);

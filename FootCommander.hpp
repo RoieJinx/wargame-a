@@ -34,7 +34,7 @@ namespace WarGame{
             HP = (HP + hp) % (MAX_HP + 1);
         }
 
-        void attack(std::vector<std::vector<Soldier*>> matrix)
+        void attack(std::vector<std::vector<Soldier*>> matrix,std::pair<int,int> sLocation)
         {
             //findEnemy()
 

@@ -11,6 +11,7 @@
 using namespace std;
 
 int main() {
+
 	WarGame::DemoGame demoGame;
 	cout << "The winner is:\n " << demoGame.play() << endl;
     std::cout<<"Reach last line of main"<<endl;

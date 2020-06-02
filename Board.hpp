@@ -19,10 +19,10 @@ namespace WarGame {
     //class Soldier;// Forward decleration
 
     class Board {
-  private:
+  public:
     std::vector<std::vector<Soldier*>> matrix; // Vector matrix to find Locations in O(1)
 
-  public:
+  //public:
     enum class MoveDIR { Up = 0, Down, Right, Left
     };
 

@@ -19,15 +19,15 @@ namespace WarGame {
 		// Add soldiers for player 1:
 			//assert(!board.has_soldiers(1));
 			board[{0,1}] = new FootSoldier(1);
-			board[{0,3}] = new FootCommander(1);
-			board[{0,5}] = new FootSoldier(1);
+			//board[{0,3}] = new FootCommander(1);
+			board[{0,0}] = new FootSoldier(1);
 			//assert(board.has_soldiers(1));
             std::cout<<"player one soldiers ready!"<<endl;
 			// Add soldiers for player 2:
 			//assert(!board.has_soldiers(2));
-			board[{7,1}] = new FootSoldier(2);
-			board[{7,3}] = new FootCommander(2);
-			board[{7,5}] = new FootSoldier(2);
+			board[{2,1}] = new FootSoldier(2);
+			//board[{2,1}] = new FootCommander(2);
+			board[{2,2}] = new FootSoldier(2);
 			//assert(board.has_soldiers(2));
             std::cout<<"player two soldiers ready!"<<endl;
 
@@ -37,7 +37,8 @@ namespace WarGame {
 		uint DemoGame::play() {
             std::cout<<"Start play()"<<endl;
 			board.move(1, {0,1}, Board::MoveDIR::Up);
-            std::cout<<"line 40"<<endl;
+           std::cout << "it moved" << endl;
+           /* std::cout<<"line 40"<<endl;
 			// FootSoldier of player 1 moves forward and attacks from {0,1} to {1,1}.
 			if (!board.has_soldiers(2)) return 1;
             std::cout<<"line 43"<<endl;
@@ -53,7 +54,7 @@ namespace WarGame {
 			board.move(2, {7,3}, Board::MoveDIR::Left);
             std::cout<<"line 54"<<endl;// FootCommander of player 2 moves left from {7,3} to {7,2}, and all soldiers of player 2 attack.
 			if (!board.has_soldiers(1)) return 2;
-            std::cout<<"line 56"<<endl;
+            std::cout<<"line 56"<<endl;*/
 
 			/// Write more moves here..
 

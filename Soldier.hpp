@@ -28,8 +28,8 @@ class Board;
         };
         Type type;
         //initial health points
-        static const int Damage;
-        static const int InitialHealthPoints;
+        int Damage;
+        int MAX_HP;
         int HP;
 
         //damage per activity
@@ -38,7 +38,7 @@ class Board;
     public:
         Soldier(int player);
         Soldier(int player, Type type, int HP);
-        virtual void attack(std::vector<std::vector<Soldier*>> matrix) = 0;
+        virtual void attack(Board *gameBoard, std::pair<int,int> sLocation) = 0;
         virtual void Heal(int health) = 0;// Uses special ability of the solider
         virtual ~Soldier(){}
 
